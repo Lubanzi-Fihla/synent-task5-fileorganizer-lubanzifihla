@@ -11,14 +11,18 @@ for file in os.listdir(folder_path):
 
         if extension in ["jpg", "jpeg", "png"]:
             category = "Images"
+
         elif extension in ["pdf", "docx", "txt"]:
             category = "Documents"
-        elif[- " extension in ["mp4", "avi"]:
-        category = "Videos"
+
+        elif extension in ["mp4", "avi"]:
+            category = "Videos"
+
         else:
             category = "Others"
 
         destination = os.path.join(folder_path, category)
+
         os.makedirs(destination, exist_ok=True)
 
         shutil.move(file_path, os.path.join(destination, file))
